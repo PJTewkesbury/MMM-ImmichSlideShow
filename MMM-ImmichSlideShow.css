@@ -1,0 +1,275 @@
+.immich-slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Portrait images: ensure full image is shown with letterboxing */
+.image-container.portrait {
+  background: black;
+}
+
+.image-container.portrait .slideshow-image {
+  max-height: 100vh;
+  height: 100vh;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Landscape images: stretch to fill the screen */
+.image-container.landscape {
+  background: black;
+}
+
+.image-container.landscape .slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-info {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  max-width: 90%;
+  max-height: 60px;
+  text-align: center;
+}
+
+.loading,
+.error,
+.no-images {
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+/* Fade transition */
+.MMM-ImmichSlideShow.fade .image-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Left transition */
+.MMM-ImmichSlideShow.slideLeft .image-container {
+  animation: slideLeft 1s ease-in-out;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide Right transition */
+.MMM-ImmichSlideShow.slideRight .image-container {
+  animation: slideRight 1s ease-in-out;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide Up transition */
+.MMM-ImmichSlideShow.slideUp .image-container {
+  animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide Down transition */
+.MMM-ImmichSlideShow.slideDown .image-container {
+  animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Zoom transition */
+.MMM-ImmichSlideShow.zoom .image-container {
+  animation: zoomIn 1s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
+    /* Custom styles for the clock module */
+    .clock {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+
+
+
+.immich-clock-grid {
+  display: inline-flex;
+  gap: 15px;
+}
+
+.clock-hour {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -2px 0 -2px -25%; /* numbers must match negative length & thickness */
+  padding: 2px 0 2px 25%; /* indicator length & thickness */
+  background: var(--color-text-bright);
+  transform-origin: 100% 50%;
+  border-radius: 3px 0 0 3px;
+}
+
+.clock-minute {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -35% -2px 0; /* numbers must match negative length & thickness */
+  padding: 35% 2px 0; /* indicator length & thickness */
+  background: var(--color-text-bright);
+  transform-origin: 50% 100%;
+  border-radius: 3px 0 0 3px;
+}
+
+.clock-second {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -38% -1px 0 0; /* numbers must match negative length & thickness */
+  padding: 38% 1px 0 0; /* indicator length & thickness */
+
+  /* background: #888888 !important; */
+
+  /* use this instead of secondsColor */
+
+  /* have to use !important, because the code explicitly sets the color currently */
+  transform-origin: 50% 100%;
+}
+
+.immich-digital {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;  
+}
+
+.clock-hour-digital {
+  color: var(--color-text-bright);
+}
+
+.clock-minute-digital {
+  color: var(--color-text-bright);
+}
+
+.clock-second-digital {
+  color: var(--color-text-dimmed);
+}
+
+@media (max-width: 1200px) {
+  .immich-digital {    
+    padding: 10px 20px 10px 20px;
+    width:auto;
+    transform: scale(0.5);
+    transform-origin: top left;    
+  }
+} 
+
+.immich-dateColour
+{
+  color: white;
+}
+
+.image-info
+{
+  bottom:2px;
+	padding: 5px;
+  line-height: 24px;
+}
