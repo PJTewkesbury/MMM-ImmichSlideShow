@@ -19,23 +19,10 @@ A MagicMirror² module that displays a slideshow of images from an Immich server
 1. Navigate to your MagicMirror's modules folder:
 ```bash
 cd ~/MagicMirror/modules
-```
-
-2. Clone or create this module:
-```bash
-<<<<<<< HEAD
-cd ~/MagicMirror/modules/MMM-ImmichSlideshow
-git pull
-=======
-mkdir MMM-ImmichSlideShow
+git clone https://github.com/PJTewkesbury/MMM-ImmichSlideShow
 cd MMM-ImmichSlideShow
->>>>>>> 8bbbdc76cf591094f0d989cf1a52a7bb122f721b
+npm install
 ```
-
-3. Copy the following files into the module directory:
-   - `MMM-ImmichSlideShow.js`
-   - `node_helper.js`
-   - `MMM-ImmichSlideShow.css`
 
 ## Configuration
 
@@ -116,4 +103,5 @@ Option|Possible values|Default|Description
 - Verify the module is in the correct directory: `~/MagicMirror/modules/MMM-ImmichSlideShow/`
 - Check that all three files are present
 - Restart MagicMirror: `pm2 restart MagicMirror`
+
 
