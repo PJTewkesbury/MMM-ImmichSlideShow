@@ -1,6 +1,6 @@
 # MMM-ImmichSlideShow
 
-A MagicMirror² module that displays a slideshow of images from an Immich server album.
+This is a MagicMirror² module that displays a slideshow of images from an shared Immich server album or albums.
 
 ## Screenshot
 
@@ -103,5 +103,3 @@ Option|Possible values|Default|Description
 - Verify the module is in the correct directory: `~/MagicMirror/modules/MMM-ImmichSlideShow/`
 - Check that all three files are present
 - Restart MagicMirror: `pm2 restart MagicMirror`
-
-
